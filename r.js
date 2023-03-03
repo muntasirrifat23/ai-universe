@@ -9,8 +9,9 @@ const Ai = () =>{
 const displayAi = universes =>{
     const universesContainer = document.getElementById('ai-universe');
     universesContainer.textContent = " ";
+    universes= universes.slice(0,6);
 
-    universes.forEach(api => {
+     universes.forEach(api => {
       console.log(api);
         const universeDiv = document.createElement('div');
         universeDiv.classList.add('col');
@@ -20,9 +21,9 @@ const displayAi = universes =>{
         <img src="${api.image}" class="card-img-top w-50 image-fluid ml-2 align-items-baseline">
         <div class="card-body">
         <h5 class="card-title fw-bold">Features:</h5>
-        <h5 class="card-title fs-6 text-secondary">1. ${api.features[0]}</h5>
-        <h5 class="card-title fs-6 text-secondary">2. ${api.features[1]}</h5>
-        <h5 class="card-title fs-6 text-secondary">3. ${api.features[2]}</h5>
+        <h5 class="card-title fs-6 text-secondary">1. ${api.features[0]?api.features[0]:'No value'}</h5>
+        <h5 class="card-title fs-6 text-secondary">2. ${api.features[1]?api.features[1]:'No value'}</h5>
+        <h5 class="card-title fs-6 text-secondary">3. ${api.features[2]?api.features[2]:'No value'}</h5>
         </div>
         <hr>
         <div class=" d-flex justify-content-between">
@@ -30,14 +31,19 @@ const displayAi = universes =>{
           <h5 class="card-title p-3 fw-bold">${api.name}</h5>
           <p class="card-title p-3 text-secondary"><i class="fa-solid fa-calendar-days"></i> ${api.published_in}</p>
           </div>
-          <button type="button" class="btn btn-danger rounded-circle bg-danger-subtle text-danger border-0 h-50 align-items-center"><i class="fa-solid fa-arrow-right"></i></button>
+          <button type="button" class="btn btn-danger rounded-circle bg-danger-subtle text-danger border-0 h-50 align-items-center" data-bs-toggle="modal" data-bs-target="#exampleModal"><i class="fa-solid fa-arrow-right"></i></button>
           </div>
         </div>
       </div>
         `;
         universesContainer.appendChild(universeDiv);
     });
-        
+
+
+    // Show All
+    document.getElementById('show-all').addEventListener('click', function(){
+      
+    });        
 }
 
 Ai()
