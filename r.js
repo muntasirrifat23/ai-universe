@@ -31,19 +31,43 @@ const displayAi = universes =>{
           <h5 class="card-title p-3 fw-bold">${api.name}</h5>
           <p class="card-title p-3 text-secondary"><i class="fa-solid fa-calendar-days"></i> ${api.published_in}</p>
           </div>
-          <button type="button" class="btn btn-danger rounded-circle bg-danger-subtle text-danger border-0 h-50 align-items-center" data-bs-toggle="modal" data-bs-target="#exampleModal"><i class="fa-solid fa-arrow-right"></i></button>
+          <button type="button" onclick="details('${api.id}')" class="btn btn-danger rounded-circle bg-danger-subtle text-danger border-0 h-50 align-items-center" data-bs-toggle="modal" data-bs-target="#exampleModal"><i class="fa-solid fa-arrow-right"></i></button>
           </div>
         </div>
       </div>
         `;
         universesContainer.appendChild(universeDiv);
     });
-
-
-    // Show All
-    document.getElementById('show-all').addEventListener('click', function(){
-      
-    });        
 }
+// Modal
+
+const details = id=>{
+  const url=`https://openapi.programming-hero.com/api/ai/tool/${id}`;
+ 
+  console.log(url);
+  fetch(url)
+  .then(res => res.json())
+  .then(data => Display(data.data));
+  
+
+}
+const Display =id =>{
+  console.log(id);
+  const detailsContainer = document.getElementById('details-modal');
+  detailsContainer.innerHTML =`
+
+  <div class="card" style="width: 18rem;">
+    <img src="${id.image_link[0]}" class="card-img-top" alt="...">
+    <div class="card-body">
+      <p class="card-text fw-bold">"${id.input_output_examples[0].input}"</p>
+      <p class="card-text">"${id.input_output_examples[0].output}"</p>
+    </div>
+  </div>
+  `;
+}
+
+
+  // <h5 class="mb-4">${id.description}</h5>
+
 
 Ai()
