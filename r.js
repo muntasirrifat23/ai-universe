@@ -9,10 +9,7 @@ const Ai = () =>{
 const displayAi = universes =>{
     const universesContainer = document.getElementById('ai-universe');
     universesContainer.textContent = " ";
-    if(universes.length > 6){
       universes= universes.slice(0,6);
-
-    }
 
      universes.forEach(api => {
       console.log(api);
@@ -23,8 +20,8 @@ const displayAi = universes =>{
         <div class="card p-3 h-100">
         <img src="${api.image}" class="card-img-top w-100 image-fluid ml-2 align-items-baseline">
         <div class="card-body">
-        <h5 class="card-title fw-bold">Features:</h5>
-        <h5 class="card-title fs-6 text-secondary">1. ${api.features[0]?api.features[0]:'No value'}</h5>
+        <h5 class="card-title fw-bold ">Features:</h5>
+        <h5 class="card-title fs-6 text-secondary mt-3">1. ${api.features[0]?api.features[0]:'No value'}</h5>
         <h5 class="card-title fs-6 text-secondary">2. ${api.features[1]?api.features[1]:'No value'}</h5>
         <h5 class="card-title fs-6 text-secondary">3. ${api.features[2]?api.features[2]:'No value'}</h5>
         </div>
@@ -42,7 +39,6 @@ const displayAi = universes =>{
         universesContainer.appendChild(universeDiv);
     });
 }
-// Modal
 
 const details = id=>{
   const url=`https://openapi.programming-hero.com/api/ai/tool/${id}`;
@@ -51,9 +47,8 @@ const details = id=>{
   fetch(url)
   .then(res => res.json())
   .then(data => Display(data.data));
-  
-
 }
+
 const Display =id =>{
   console.log(id);
   const detailsContainer = document.getElementById('details-modal');
