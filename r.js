@@ -25,9 +25,12 @@ const displayAi = universes =>{
         <h5 class="card-title fs-6 text-secondary">3. ${api.features[2]}</h5>
         </div>
         <hr>
-        <div class=" d-flex">
+        <div class=" d-flex justify-content-between">
+          <div>
           <h5 class="card-title p-3 fw-bold">${api.name}</h5>
-          <button type="button" class="btn btn-danger"><i class="fa-solid fa-arrow-right"></i></button>
+          <p class="card-title p-3 text-secondary"><i class="fa-solid fa-calendar-days"></i> ${api.published_in}</p>
+          </div>
+          <button type="button" class="btn btn-danger rounded-circle bg-danger-subtle text-danger border-0 h-50 align-items-center"><i class="fa-solid fa-arrow-right"></i></button>
           </div>
         </div>
       </div>
