@@ -56,24 +56,21 @@ const Display =id =>{
   const detailsContainer = document.getElementById('details-modal');
   detailsContainer.innerHTML =`
 
-  <div class="d-flex">
+  <div class="d-flex float-sm-start">
 
-  <div class="card align-items-center p-4 border border-danger bg-danger-subtle g-4 m-2">
+  <div class="card p-4 border border-danger bg-danger-subtle g-4 m-2">
     <h5 class="fw-bold">${id.description}</h5>
-
     <div class="card-group border-0">
       <div class="card m-2 rounded-3">
       <div class="card-body">
         <h5 class="card-title text-success">${id.pricing[0].price} ${id.pricing[0].plan}</h5>
-        </div>
       </div>
-
+      </div>
       <div class="card m-2 rounded-3">
         <div class="card-body">
         <h5 class="card-title text-warning">${id.pricing[1].price} ${id.pricing[1].plan}</h5>
         </div>
       </div>
-
       <div class="card m-2 rounded-3">
         <div class="card-body">
         <h5 class="card-title text-info">${id.pricing[2].price} ${id.pricing[2].plan}</h5>
@@ -81,21 +78,29 @@ const Display =id =>{
       </div>
     </div>
     <div>
-       <div>
-       <h5 class="card-title fw-bold">Features:</h5>
-       <p class="card-title fs-6"><ul class="text-secondary">
-       <li> ${id.features[1].feature_name?id.features[1].feature_name:'No value'}</li>
-       <li> ${id.features[2].feature_name?id.features[2].feature_name:'No value'}</li>
-       <li> ${id.features[3].feature_name?id.features[3].feature_name:'No value'}</li>
-       </ul>
-       </p>
-       </div>
-        
-     </div>
-
-
-
-
+    <div class="d-flex justify-content-around mx-auto">
+      <div>
+        <h5 class="card-title fw-bold">Features:</h5>
+        <p class="card-title fs-6"><ul class="text-secondary">
+        <li> ${id.features[1].feature_name?id.features[1].feature_name:'No value'}</li>
+        <li> ${id.features[2].feature_name?id.features[2].feature_name:'No value'}</li>
+        <li> ${id.features[3].feature_name?id.features[3].feature_name:'No value'}</li>
+        </ul>
+        </p>
+      </div>
+          
+      <div>
+          <h5 class="card-title fw-bold">Integrations:</h5>
+          <p class="card-title fs-6"><ul class="text-secondary">
+          <li> ${id.integrations[0]?id.integrations[0]:'No value'}</li>
+          <li> ${id.integrations[1]?id.integrations[1]:'No value'}</li>          
+          <li> ${id.integrations[2]?id.integrations[2]:'No value'}</li>
+          </ul>
+          </p>
+      </div>
+      </div>
+      
+    </div>
 
   </div>
     
