@@ -9,13 +9,16 @@ const Ai = () =>{
 const displayAi = universes =>{
     const universesContainer = document.getElementById('ai-universe');
     universesContainer.textContent = " ";
-    universes= universes.slice(0,6);
+    if(universes.length > 6){
+      universes= universes.slice(0,6);
+
+    }
 
      universes.forEach(api => {
       console.log(api);
         const universeDiv = document.createElement('div');
         universeDiv.classList.add('col');
-    // Append
+
         universeDiv.innerHTML = `
         <div class="card p-3 h-100">
         <img src="${api.image}" class="card-img-top w-100 image-fluid ml-2 align-items-baseline">
@@ -55,9 +58,7 @@ const Display =id =>{
   console.log(id);
   const detailsContainer = document.getElementById('details-modal');
   detailsContainer.innerHTML =`
-
-  <div class="d-flex float-sm-start">
-
+  <div class="d-flex">
   <div class="card p-4 border border-danger bg-danger-subtle g-4 m-2">
     <h5 class="fw-bold">${id.description}</h5>
     <div class="card-group border-0">
@@ -78,7 +79,7 @@ const Display =id =>{
       </div>
     </div>
     <div>
-    <div class="d-flex justify-content-around mx-auto">
+    <div class="d-flex justify-content-around mx-auto position-sticky">
       <div>
         <h5 class="card-title fw-bold">Features:</h5>
         <p class="card-title fs-6"><ul class="text-secondary">
@@ -98,16 +99,15 @@ const Display =id =>{
           </ul>
           </p>
       </div>
-      </div>
-      
+      </div>  
     </div>
-
   </div>
     
   <div class="card align-items-center p-4 m-2">
     <img src="${id.image_link[0]}" class="card-img-top" alt="...">
-      <p class="card-text fs-3 fw-bold">"${id.input_output_examples[0].input}"</p>
-      <p class="fs-6 text-secondary">"${id.input_output_examples[0].output}"</p>
+    <button type="button" class="btn btn-danger position-absolute top-0 end-0">${id.accuracy.score}% accuracy</button>
+      <p class="card-text fs-3 fw-bold">${id.input_output_examples[0].input}</p>
+      <p class="fs-6 text-secondary">${id.input_output_examples[0].output}</p>
   <div>
 
   </div>
