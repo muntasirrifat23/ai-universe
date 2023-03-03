@@ -80,13 +80,18 @@ const Display =id =>{
         </div>
       </div>
     </div>
-
-    <div class="card-body">
-        <h5 class="card-title fw-bold">Features:</h5>
-        <h5 class="card-title fs-6 text-secondary">1. ${api.features[0]?api.features[0]:'No value'}</h5>
-        <h5 class="card-title fs-6 text-secondary">2. ${api.features[1]?api.features[1]:'No value'}</h5>
-        <h5 class="card-title fs-6 text-secondary">3. ${api.features[2]?api.features[2]:'No value'}</h5>
-        </div>
+    <div>
+       <div>
+       <h5 class="card-title fw-bold">Features:</h5>
+       <p class="card-title fs-6"><ul class="text-secondary">
+       <li> ${id.features[1].feature_name?id.features[1].feature_name:'No value'}</li>
+       <li> ${id.features[2].feature_name?id.features[2].feature_name:'No value'}</li>
+       <li> ${id.features[3].feature_name?id.features[3].feature_name:'No value'}</li>
+       </ul>
+       </p>
+       </div>
+        
+     </div>
 
 
 
