@@ -18,7 +18,7 @@ const displayAi = universes =>{
     // Append
         universeDiv.innerHTML = `
         <div class="card p-3 h-100">
-        <img src="${api.image}" class="card-img-top w-50 image-fluid ml-2 align-items-baseline">
+        <img src="${api.image}" class="card-img-top w-100 image-fluid ml-2 align-items-baseline">
         <div class="card-body">
         <h5 class="card-title fw-bold">Features:</h5>
         <h5 class="card-title fs-6 text-secondary">1. ${api.features[0]?api.features[0]:'No value'}</h5>
@@ -55,19 +55,27 @@ const Display =id =>{
   console.log(id);
   const detailsContainer = document.getElementById('details-modal');
   detailsContainer.innerHTML =`
+  <div class="row row-cols-1 row-cols-md-2 g-4 d-flex">
+     <div class="card">
+       <h5 class="mb-4">${id.description}</h5>
+      </div>
+    </div>
+  </div>
 
-  <div class="card" style="width: 18rem;">
+  <div class="card align-items-center p-4">
     <img src="${id.image_link[0]}" class="card-img-top" alt="...">
     <div class="card-body">
       <p class="card-text fw-bold">"${id.input_output_examples[0].input}"</p>
-      <p class="card-text">"${id.input_output_examples[0].output}"</p>
+      <p class="fs-6 text-secondary">"${id.input_output_examples[0].output}"</p>
     </div>
+  </div>
+  <div>
+
   </div>
   `;
 }
 
 
-  // <h5 class="mb-4">${id.description}</h5>
 
 
 Ai()
