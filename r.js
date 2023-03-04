@@ -55,7 +55,7 @@ const Display =id =>{
   detailsContainer.innerHTML =`
   <div class="d-flex">
   <div class="card p-4 border border-danger bg-danger-subtle g-4 m-2">
-    <h5 class="fw-bold">${id.description}</h5>
+    <h5 class="fw-bold">${id.description ? id.description : 'Data Not Find'}"</h5>
     <div class="card-group border-0">
       <div class="card m-2 rounded-3">
       <div class="card-body">
@@ -102,7 +102,7 @@ const Display =id =>{
     
   <div class="card align-items-center p-4 m-2">
     <img src="${id.image_link[0]}" class="card-img-top" alt="...">
-    <button type="button" class="btn btn-danger position-absolute top-0 end-0">${id.accuracy.score}% accuracy</button>
+    <button type="button" class="btn btn-danger position-absolute top-0 end-0">${id.accuracy.score ? id.accuracy.score :'0'}% accuracy</button>
       <p class="card-text fs-3 fw-bold">${id.input_output_examples[0].input}</p>
       <p class="fs-6 text-secondary">${id.input_output_examples[0].output}</p>
   <div>
