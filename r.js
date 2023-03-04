@@ -91,6 +91,8 @@ const Display =id =>{
           <li> ${id.integrations[0]?id.integrations[0]:'No value'}</li>
           <li> ${id.integrations[1]?id.integrations[1]:'No value'}</li>          
           <li> ${id.integrations[2]?id.integrations[2]:'No value'}</li>
+          <li> ${id.integrations[3]?id.integrations[3]:'No value'}</li>
+          <li> ${id.integrations[4]?id.integrations[4]:'No value'}</li>
           </ul>
           </p>
       </div>
